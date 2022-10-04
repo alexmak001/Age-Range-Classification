@@ -34,6 +34,7 @@ while True:
         cv2.imwrite(save_dest, roi_color)
 
         face = cv2.imread(save_dest)
+        #print(face.shape)
         face_resized = cv2.resize(face, (32,32))
         input_blob = cv2.dnn.blobFromImage(face_resized, 1, (32,32), swapRB=False, crop=False)
         net.setInput(input_blob)
